@@ -1,0 +1,13 @@
+services:
+  ha-fusion:
+    container_name: 5266-hafusion-compose
+    image: ghcr.io/matt8707/ha-fusion
+    volumes:
+      - /volume3/docker/homeassistant/hafusion:/app/data
+    network_mode: bridge
+    ports:
+      - 5266:5050
+    environment:
+      TZ: Asia/Shanghai
+      HASS_URL: http://192.168.5.8:8861
+    restart: false
